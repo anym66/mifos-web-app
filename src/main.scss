@@ -1,3 +1,23 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// Définir une couleur dorée sombre personnalisée simple
+$golden-dark: mat-palette($mat-brown, 800);
+
+// Créer un thème personnalisé en utilisant la couleur dorée sombre comme couleur primaire
+$custom-theme: mat-light-theme((
+  color: (
+    primary: $golden-dark,
+    accent: mat-palette($mat-amber),
+    warn: mat-palette($mat-red),
+  ),
+));
+
+// Appliquer le thème personnalisé
+@include angular-material-theme($custom-theme);
+
+
 /*
  * Entry point of global application style.
  * Component-specific style should not go here and be included directly as part of the components.
